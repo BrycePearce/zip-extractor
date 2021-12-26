@@ -1,16 +1,19 @@
 {
   "name": "zip-extractor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Extracts .rar files",
+  "main": "extract.ts",
+  "bin": "extract.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node extract.ts"
+    "start": "npx ts-node extract.ts",
+    "binary": "tsc && pkg --targets latest-win-x64 ./output/extract.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BrycePearce/zip-extractor.git"
   },
-  "author": "",
+  "author": "Bryce Pearce",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BrycePearce/zip-extractor/issues"
@@ -25,6 +28,7 @@
   "dependencies": {
     "async": "^3.2.2",
     "chalk": "^4.1.2",
-    "node-7z": "^3.0.0"
+    "node-7z": "^3.0.0",
+    "pkg": "^5.5.1"
   }
 }
