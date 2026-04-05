@@ -1,19 +1,38 @@
-# zip-extractor
+# rar/zip-extractor
 
-Recursively extracts .rar/.7z/.zip files into an output directory
+Recursively extracts `.rar`, `.7z`, and `.zip` archives from a source directory into a destination directory. Handles multi-part archives, password-protected archives, and permission-restricted directories.
+
+## Requirements
+
+- [Node.js](https://nodejs.org) (v21+)
+- [7-Zip](https://www.7-zip.org) installed and available on your PATH
 
 ## Usage
 
-<ins>**Via Binary**</ins>
+**From source**
 
-1.) Run `npm run binary` to generate the executable
+```bash
+npm start
+```
 
-2.) Add the binary to your PATH
+Or pass paths directly to skip the prompts:
 
-3.) Run `extract your/output/path` from the root directory
+```bash
+npm start -- "C:\path\to\source" "D:\path\to\destination"
+```
 
-<ins>**Running from source**</ins>
+**As a Windows executable**
 
-1.) Run `npm run start`
+Build the exe:
 
-2.) When prompted enter the root folder source, and the destination source
+```bash
+npm run build
+```
+
+This produces `output/extract.exe`. Run it from anywhere:
+
+```bash
+extract.exe "C:\path\to\source" "D:\path\to\destination"
+```
+
+The destination directory will be created automatically if it doesn't exist.
